@@ -207,7 +207,7 @@ def clear_folder(folder):
 if __name__ == "__main__":
     try:
         
-        print("\n---- MTA Server Updater by Fernando ----")
+        print("\n---- MTA Server Updater Started ----")
         print(f"\nOS: {OS_SYSTEM} | 64-bit: {IS_64_BIT} | ARM: {IS_ARM}")
         
         args = sys.argv[1:]
@@ -236,7 +236,7 @@ if __name__ == "__main__":
 
         delete_folder(updateinfo_folder)
 
-        print("\nServer binaries were successfully updated. Bye!\n")
+        print("\nServer binaries were successfully updated!\n")
 
     except Exception as e:
         print(traceback.format_exc())
