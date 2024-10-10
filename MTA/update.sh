@@ -15,7 +15,7 @@ if [[ $AUTO_UPDATE == 1 ]]; then
 
     if [[ -z "$download_link" ]]; then
         echo "No download link found."
-        exit 1
+        return 1
     fi
 
     full_download_link="https://nightly.multitheftauto.com/$download_link"
@@ -28,14 +28,14 @@ if [[ $AUTO_UPDATE == 1 ]]; then
 
     if [[ ! -f "$filename" ]]; then
         echo "Download failed."
-        exit 1
+        return 1
     fi
 
     tar -xvzf "$filename" --strip-components=1 -C "$SERVER_DIRECTORY"
 
     if [[ $? -ne 0 ]]; then
         echo "Extraction failed."
-        exit 1
+        return 1
     fi
 
     rm "$filename"
