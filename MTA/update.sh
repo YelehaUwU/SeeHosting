@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $AUTO_UPDATE == 1 ]]; then
+function download_and_extract() {
     SERVER_DIRECTORY="/home/container"
 
     if [[ -d /mnt/server ]]; then
@@ -41,4 +41,12 @@ if [[ $AUTO_UPDATE == 1 ]]; then
     rm "$filename"
 
     echo "File downloaded and extracted successfully to the server."
+    return 0
+}
+
+if [[ $AUTO_UPDATE == 1 ]]; then
+    download_and_extract
+    if [[ $? -ne 0 ]]; then
+        echo "Update process failed."
+    fi
 fi
