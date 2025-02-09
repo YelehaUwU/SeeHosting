@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$AUTO_UPDATE" != "1" ]]; then
-    echo "Auto-update is disabled. Enable AUTO UPDATE for automatic updates."
+    echo "Auto Update is disabled. Enable it for automatic server updates."
     exit 0
 fi
 
