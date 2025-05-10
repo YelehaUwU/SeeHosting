@@ -1,5 +1,5 @@
 #!/bin/bash
-
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libzstd.so
 if [[ "$AUTO_UPDATE" != "1" ]]; then
     echo "❌ Auto Update is disabled. Enable it for automatic server updates."
     exit 0
