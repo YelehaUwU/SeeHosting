@@ -45,7 +45,7 @@ else
 fi
 
 echo "⬇️  Downloading: $full_download_link"
-curl -sf -O "$full_download_link"
+curl -sfL -O "$full_download_link"
 
 if [[ $? -ne 0 || ! -f "$filename" ]]; then
     echo "❌ Download failed (file not found or HTTP error). Skipping update."
